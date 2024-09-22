@@ -1,0 +1,119 @@
+.main-heading {
+    text-align: center;
+    padding: 20px;
+}
+
+.main-heading h1 {
+    color: #534dab;;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+.Row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.column-prsnl-info, .colmun-prof-row {
+    background-color: #e6e6fa;
+    padding: 20px;
+		padding-right: 20px;
+    margin: 20px ;
+		margin-right: 20px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.colmun-prof-row h2, .column-prsnl-info h2 {
+	color: #373374;
+	font-weight: 900;
+	text-decoration: underline;
+	font-style: italic;
+}
+
+.column-prsnl-info:hover, .colmun-prof-row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 9 16px #4b4692;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+p {
+	color: #373374;
+	font-weight: bold;
+	font-size: 20px;
+	font-style: italic;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    font-style: italic;
+		color: #534dab;
+}
+
+
+input.form-control, 
+textarea.form-control {
+    border-radius: 4px;
+		padding: 10px; 
+    font-size: 1rem;
+    width: 95%;
+    border: 1px solid #4b4692; 
+    border-radius: 4px;; 
+}
+
+input.form-control:hover, 
+textarea.form-control:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 9px 16px #4b4692;
+}
+
+p {
+    text-align: left;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+		margin: 10px;
+}
+
+button {
+	background-color: #e6e6fa;
+	color: #373374;
+	border-radius: 5px;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 100%;
+	font-weight: bold;
+	border: #e6e6fa;
+}
+
+button:hover {
+	background-color: #534dab;
+}
+
+.edu-add-butn, .exp-add-butn, .skills-add-butn {
+	margin-top: 10px;
+}

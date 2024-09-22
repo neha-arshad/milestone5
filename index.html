@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dynamic-Resume</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="app.css">
+
+</head>
+<body>
+	
+	<div class="container" id="RESUME-GENERATE">
+		<div class="main-heading">
+			<h1>RESUME BY NEHA ARSHAD</h1>
+			
+			<div class="Row">
+	<!-- Personal Information -->
+	 <div class="column-prsnl-info">
+		<h2>Personal Information</h2>
+		
+		<div class="form-group">
+			<label for="namefield">First Name</label>
+			<input type="text" id="namefield" placeholder="Enter here" class="form-control">
+		</div>
+		
+		<div class="form-group">
+			<label for="lastnamefield">Last Name</label>
+			<input type="text" id="lastnamefield" placeholder="Enter here" class="form-control">
+		</div>
+		
+		<div class="form-group">
+		<label for="Emailfield">Your Email</label>
+		<input type="email" id="Emailfield" placeholder="Enter here" class="form-control">
+	</div>
+	
+	<div class="form-group">
+		<label for="contactfield">Your Contact</label>
+		<input type="tel" id="contactfield" placeholder="Enter here" class="form-control">
+	</div>
+	
+	<div class="form-group">
+		<label for="Addressfield">Your Address</label>
+		<textarea id="Addressfield" placeholder="Enter here" class="form-control" rows="3"></textarea>
+	</div>
+	
+	<p>Social Links</p>
+	<div class="social-links">
+		<label for="fbfield">Facebook Link</label>
+		<input type="url" id="fbfield" placeholder="type here" class="form-control">
+	</div>
+	
+	<div class="social-links">
+		<label for="instafield">Instagram Link</label>
+		<input type="url" id="instafield" placeholder="type here" class="form-control">
+	</div>
+	
+	<div class="social-links">
+		<label for="linkdinfeild">LinkedIn Link</label>
+		<input type="url" id="linkdinfeild" placeholder="type here" class="form-control">
+	</div>
+	
+	<div class="social-links">
+		<label for="githubfield">Github Link</label>
+		<input type="url" id="githubfield" placeholder="type here" class="form-control">
+	</div>
+</div>
+
+                <!-- Professional Information -->
+<div class="colmun-prof-row">
+	<h2>Professional Information</h2>
+	<!-- Education -->
+	 <div id="edu">
+		<div class="form-group">
+			<label for="edu-field">EDUCATION</label>
+
+			<div id="edu-fields">
+				<textarea id="edufield" placeholder="Type here" class="form-control" rows="3"></textarea>
+			</div>
+			
+			<div class="edu-add-butn">
+				<button type="button" onclick="addNewEduField()" class="edu-add">Add</button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Experience -->
+	 <div id="exp">
+		<div class="form-group">
+			<label for="exp-field">EXPERIENCE</label>
+			
+			<div id="exp-fields">
+				<textarea id="expfield" placeholder="Type here" class="form-control" rows="3"></textarea>
+			</div>
+			
+			<div class="exp-add-butn">
+				<button type="button" onclick="addNewExpField()" class="exp-add">Add</button>
+			</div>
+		</div>
+	</div>
+
+ <!-- Skills -->
+	<div id="skils">
+		<div class="form-group">
+			<label for="skils-field">SKILLS</label>
+			
+			<div id="skils-fields">
+				<textarea id="skilsfield" placeholder="Type here" class="form-control" rows="3"></textarea>
+			</div>
+
+			<div class="skils-add-butn">
+				<button type="button" onclick="addNewSkillField()" class="skils-add">Add</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="button-group">
+	<button type="button" onclick="generateResume()">RESUME-GENERATE</button>
+</div>
+</div>
+
+   <!-- TEMPLATE GENERATE -->
+		<div class="container" id="Templet-generate" style="display: none;">
+			
+			<div class="Row">
+				<div class="first-column">
+					
+					<div class="container">
+						<p id="firstnametemp">NEHA</p>
+						<p id="lastnametemp">ARSHAD</p>
+						<p id="phonetemp">+923332750880</p>
+						<p id="emailtemp">bintearshada@gmail.com</p>
+						<p id="Addresstemp">North Karachi</p>
+						
+						<hr/>
+						<p>
+							<a id="fbtemp" href="#">https://www.facebook.com</a>
+						</p>
+						<p>
+							<a id="instatemp" href="#">https://www.Instagram.com</a>
+						</p>
+						<p>
+							<a id="linkdintemp" href="#">https://www.Linkdin.com</a>
+						</p>
+						<p>
+							<a id="githubtemp" href="#">https://www.github.com</a>
+						</p>
+					</div>
+				</div>
+				
+				<div class="second-column">
+					<h1 id="name2temp">NEHA ARSHAD</h1>
+					
+					<div class="card">
+						<div class="card-header">
+							<h3>SKILLS</h3>
+						</div>
+						
+						<div class="card-body">
+							<ul id="skiltemp">
+								<li>Ability to delegate Responsibilities</li>
+								<li>Excellent communication</li>
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>JavaScript</li>
+								<li>TypeScript</li>
+							</ul>
+						</div>
+					 </div>
+					 
+					<div class="card">
+						<div class="card-header">
+							<h3>EXPERIENCE</h3>
+						</div>
+						
+						<div class="card-body">
+							<p id="exptemp"> 
+								 Designed and developed a personal portfolio to showcase my projects, skills, and resume using HTML, CSS, and JavaScript.Assisted in web development projects using HTML, CSS, and JavaScript.Developed a responsive web application using React.js and TypeScript.Designed and developed a series of command-line interface (CLI) tools using Node.js and TypeScript to automate repetitive tasks and improve developer efficiency.
+								</p>
+							</div>
+						</div>
+						
+						<div class="card">
+							<div class="card-header">
+								<h3>EDUCATION</h3>
+							</div>
+							
+							<div class="card-body">
+
+								<ul id="edutemp">
+									<li>Matriculation in Science</li>
+									<li>Intermediate in Science group</li> 
+									<li>Master in Arts</li>
+									<li>Certified Cloud Applied Generative AI Engineer (Gen Eng) In process</li>
+								</ul>
+							</div>
+							<button onclick="printResume()">Print PDF</button>
+							<button onclick="shareResumeBtn()">Share Resume</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+    <script src="data.js"></script>
+</body>
+</html>
