@@ -1,35 +1,123 @@
 // Function to add new Education field
+// function addNewEduField() {
+//   const eduFields: any = document.getElementById("edu-fields");
+
+//   const newField = document.createElement("textarea");
+//   newField.placeholder = "Type here";
+//   newField.className = "form-control";
+//   eduFields.appendChild(newField);
+// }
+
 function addNewEduField() {
   const eduFields: any = document.getElementById("edu-fields");
 
+  // Create a new div to hold both the textarea and the remove button
+  const fieldWrapper = document.createElement("div");
+  fieldWrapper.className = "edu-field-wrapper";
+
+  // Create a new textarea
   const newField = document.createElement("textarea");
   newField.placeholder = "Type here";
   newField.className = "form-control";
-  newField.rows = 3;
-  eduFields.appendChild(newField);
+
+  // Create a remove button
+  const removeButton = document.createElement("button");
+  removeButton.innerText = "Remove";
+  removeButton.className = "remove-btn";
+
+  // Add event listener to the remove button to remove the textarea
+  removeButton.addEventListener("click", function () {
+    eduFields.removeChild(fieldWrapper); // Remove the whole wrapper (textarea + button)
+  });
+
+  // Append the textarea and remove button to the fieldWrapper
+  fieldWrapper.appendChild(newField);
+  fieldWrapper.appendChild(removeButton);
+
+  // Append the fieldWrapper to the edu-fields container
+  eduFields.appendChild(fieldWrapper);
 }
+
 
 // Function to add new Experience field
-function addNewExpField() {
-  const expFields: any = document.getElementById("exp-fields");
+// function addNewExpField() {
+//   const expFields: any = document.getElementById("exp-fields");
 
+//   const newField = document.createElement("textarea");
+//   newField.placeholder = "Type here";
+//   newField.className = "form-control";
+//   expFields.appendChild(newField);
+// }
+function addNewExpField() {
+  const eduFields: any = document.getElementById("exp-fields");
+
+  // Create a new div to hold both the textarea and the remove button
+  const fieldWrapper = document.createElement("div");
+  fieldWrapper.className = "exp-field-wrapper";
+
+  // Create a new textarea
   const newField = document.createElement("textarea");
   newField.placeholder = "Type here";
   newField.className = "form-control";
-  newField.rows = 3;
-  expFields.appendChild(newField);
+
+  // Create a remove button
+  const removeButton = document.createElement("button");
+  removeButton.innerText = "Remove";
+  removeButton.className = "remove-btn";
+
+  // Add event listener to the remove button to remove the textarea
+  removeButton.addEventListener("click", function () {
+    eduFields.removeChild(fieldWrapper); // Remove the whole wrapper (textarea + button)
+  });
+
+  // Append the textarea and remove button to the fieldWrapper
+  fieldWrapper.appendChild(newField);
+  fieldWrapper.appendChild(removeButton);
+
+  // Append the fieldWrapper to the edu-fields container
+  eduFields.appendChild(fieldWrapper);
 }
+
 
 // Function to add new Skill field
-function addNewSkillField() {
-  const skilsFields: any = document.getElementById("skils-fields");
+// function addNewSkillField() {
+//   const skilsFields: any = document.getElementById("skils-fields");
 
+//   const newField = document.createElement("textarea");
+//   newField.placeholder = "Type here";
+//   newField.className = "form-control";
+//   skilsFields.appendChild(newField);
+// }
+function addNewSkillField() {
+  const eduFields: any = document.getElementById("skils-fields");
+
+  // Create a new div to hold both the textarea and the remove button
+  const fieldWrapper = document.createElement("div");
+  fieldWrapper.className = "skils-field-wrapper";
+
+  // Create a new textarea
   const newField = document.createElement("textarea");
   newField.placeholder = "Type here";
   newField.className = "form-control";
-  newField.rows = 3;
-  skilsFields.appendChild(newField);
+
+  // Create a remove button
+  const removeButton = document.createElement("button");
+  removeButton.innerText = "Remove";
+  removeButton.className = "remove-btn";
+
+  // Add event listener to the remove button to remove the textarea
+  removeButton.addEventListener("click", function () {
+    eduFields.removeChild(fieldWrapper); // Remove the whole wrapper (textarea + button)
+  });
+
+  // Append the textarea and remove button to the fieldWrapper
+  fieldWrapper.appendChild(newField);
+  fieldWrapper.appendChild(removeButton);
+
+  // Append the fieldWrapper to the edu-fields container
+  eduFields.appendChild(fieldWrapper);
 }
+
 
 function generateResume() {
 	const name = (document.getElementById("namefield") as HTMLInputElement).value;
@@ -50,7 +138,7 @@ function generateResume() {
 
   const github = (document.getElementById("githubfield") as HTMLInputElement).value;
 
-  // Collect all dynamically added education fields
+  // Collect all dynamically added education , skills, experience fields
   const eduFields = document.querySelectorAll("#edu-fields textarea");
 
   let educationList = "";
@@ -59,7 +147,6 @@ function generateResume() {
     educationList += `<li>${(field as HTMLTextAreaElement).value} </li>`;
   });
 
-  // Collect all dynamically added experience fields
   const expFields = document.querySelectorAll("#exp-fields textarea");
 
   let experienceList = "";
@@ -68,7 +155,7 @@ function generateResume() {
     experienceList += `<p>${(field as HTMLTextAreaElement).value} </p>`;
   });
 
-  // Collect all dynamically added skills fields
+  
   const skillFields = document.querySelectorAll("#skils-fields textarea");
 
   let skillsList = "";
@@ -113,21 +200,68 @@ function printResume() {
   window.print();
 }
 
+// function shareResumeBtn() {
+//   const resumeLink = window.location.href;
+
+//   if (navigator.share) {
+//     navigator
+//       .share({
+//         title: "My Resume",
+//         text: "Check out my resume!",
+//         url: resumeLink,
+//       })
+//       .then(() => console.log("Resume link shared successfully!"))
+//       .catch((error) => console.log("Error sharing the link:", error));
+//   } else {
+//     alert("Sharing not supported in this browser.");
+//   }
+// }
+
+// document.getElementById("shareResumeBtn")?.addEventListener("click", shareResumeBtn);
+
 function shareResumeBtn() {
-  const resumeLink = window.location.href;
+  //let resumeLink = window.location.href; // Use 'let' here instead of 'const'
+
+  // Ensure the link has http or https
+  // if (!resumeLink.startsWith("http://") && !resumeLink.startsWith("https://")) {
+  //   resumeLink = `https://${resumeLink}`;
+  // }
+	let resumeLink: string = window.location.href; // Make sure this is a string
+
+  if (resumeLink && typeof resumeLink === "string") {
+    if (
+      !resumeLink.startsWith("http://") &&
+      !resumeLink.startsWith("https://")
+    ) {
+      resumeLink = `https://${resumeLink}`;
+    }
+  } else {
+    console.error("Invalid resume link!");
+  }
+
 
   if (navigator.share) {
     navigator
       .share({
         title: "My Resume",
-        text: "Check out my resume!",
+        text: `Check out my resume: ${resumeLink}`,
         url: resumeLink,
       })
       .then(() => console.log("Resume link shared successfully!"))
       .catch((error) => console.log("Error sharing the link:", error));
   } else {
-    alert("Sharing not supported in this browser.");
+    // Fallback: Copy the link to clipboard
+    navigator.clipboard
+      .writeText(resumeLink)
+      .then(() => {
+        alert("Resume link copied to clipboard. Paste it to share!");
+      })
+      .catch((error) => {
+        console.log("Error copying link:", error);
+      });
   }
 }
 
-document.getElementById("shareResumeBtn")?.addEventListener("click", shareResumeBtn);
+document
+  .getElementById("shareResumeBtn")
+  ?.addEventListener("click", shareResumeBtn);
